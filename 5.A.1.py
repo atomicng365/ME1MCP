@@ -5,3 +5,4 @@ an = []
 # convert into int
 for item in a:
     an = an + [int(item)]
+print(an)
