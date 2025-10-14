@@ -20,8 +20,15 @@ for item in c:
 for item in b:
     groups = groups + [item.rstrip()]
 
-
+length = len(marks)
 excel = []
-for i in range(0,len(marks)):
+for i in range(0,length):
     excel = excel + [(names[i],groups[i],marks[i])]
+
+for i in range(0,length):
+    rang = range(i+1,length)
+    for m in rang:
+        if excel[m][2] < excel[i][2]:
+            (excel[m],excel[i]) = (excel[i],excel[m])
+
 print(excel)
